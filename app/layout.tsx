@@ -1,3 +1,4 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -32,7 +33,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <div className="min-h-[70vh] mt-16 w-[90%] mx-auto">{children}</div>
+        {/* Add padding to account for the fixed navbar */}
+        <div className="min-h-[70vh] mt-20 w-[90%] mx-auto">{children}</div>
         <Footer />
         <AiChat />
       </body>
