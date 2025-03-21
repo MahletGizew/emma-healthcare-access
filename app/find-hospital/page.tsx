@@ -1,8 +1,14 @@
 // pages/find-a-hospital.tsx
-import Head from "next/head";
+'use client'
 import React from "react";
-import Map from "@/components/map";
+import dynamic from 'next/dynamic';
 import HospitalCard from "@/components/hospitalcard";
+
+// Dynamically import the Map component with no SSR
+const Map = dynamic(() => import('@/components/map'), {
+  ssr: false,
+  loading: () => <div className="h-[500px] bg-gray-100 rounded-lg animate-pulse" />
+});
 
 const FindAHospital: React.FC = () => {
   // Sample data for hospitals
@@ -38,61 +44,54 @@ const FindAHospital: React.FC = () => {
   ];
 
   return (
-    <>
-      <Head>
-        <title>Find a Hospital | EMMA</title>
-      </Head>
-
-      {/* Main Content */}
-      <main className="container mx-auto p-4 grid grid-cols-12 gap-4 relative">
-        {/* Sidebar with Hospital Cards */}
-        <aside className="col-span-4 bg-white p-4 rounded-lg shadow-md overflow-y-auto max-h-[calc(100vh-128px)]">
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="Search anything..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-            />
-          </div>
-          <div className="flex justify-between mb-4">
-            {/* Filters */}
-            <div>
-              <label htmlFor="show-map" className="text-gray-600">
-                Show on map
-              </label>
-              <select
-                id="show-map"
-                className="border border-gray-300 px-2 py-1 rounded-md"
-              >
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="sort-by" className="text-gray-600">
-                Sort By:
-              </label>
-              <select
-                id="sort-by"
-                className="border border-gray-300 px-2 py-1 rounded-md"
-              >
-                <option value="nearest">Nearest</option>
-                <option value="name">Name</option>
-              </select>
-            </div>
-          </div>
-          {/* Hospital Cards */}
-          {hospitals.map((hospital, index) => (
-            <HospitalCard key={index} hospital={hospital} />
-          ))}
-        </aside>
-
-        {/* Map */}
-        <div className="col-span-8 bg-white p-4 rounded-lg shadow-md overflow-hidden z-10">
-          <Map />
+    <main className="container mx-auto p-4 grid grid-cols-12 gap-4 relative">
+      {/* Sidebar with Hospital Cards */}
+      <aside className="col-span-4 bg-white p-4 rounded-lg shadow-md overflow-y-auto max-h-[calc(100vh-128px)]">
+        <div className="mb-4">
+          <input
+            type="text"
+            placeholder="Search anything..."
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+          />
         </div>
-      </main>
-    </>
+        <div className="flex justify-between mb-4">
+          {/* Filters */}
+          <div>
+            <label htmlFor="show-map" className="text-gray-600">
+              Show on map
+            </label>
+            <select
+              id="show-map"
+              className="border border-gray-300 px-2 py-1 rounded-md"
+            >
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="sort-by" className="text-gray-600">
+              Sort By:
+            </label>
+            <select
+              id="sort-by"
+              className="border border-gray-300 px-2 py-1 rounded-md"
+            >
+              <option value="nearest">Nearest</option>
+              <option value="name">Name</option>
+            </select>
+          </div>
+        </div>
+        {/* Hospital Cards */}
+        {hospitals.map((hospital, index) => (
+          <HospitalCard key={index} hospital={hospital} />
+        ))}
+      </aside>
+
+      {/* Map */}
+      <div className="col-span-8 bg-white p-4 rounded-lg shadow-md overflow-hidden z-10">
+        <Map />
+      </div>
+    </main>
   );
 };
 
