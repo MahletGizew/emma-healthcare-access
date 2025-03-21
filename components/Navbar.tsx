@@ -7,14 +7,15 @@ export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();
 
   return (
-    <nav className="w-full fixed top-0 bg-white shadow-md py-6 px-12 flex justify-between items-center border-b border-b-gray-200">
+    <nav className="w-full fixed top-0 bg-white shadow-md py-6 px-12 flex justify-between items-center border-b border-b-gray-200 z-50">
+      {/* Container */}
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-[#AD6E9D]">
           EMMA
         </Link>
 
-        {/* Navigation Links */}
+        {/* Navigation Links (Visible on Medium and Larger Screens) */}
         <div className="hidden md:flex space-x-6 text-gray-700">
           <Link href="/" className="hover:text-[#AD6E9D]">
             {t('home')}
