@@ -48,11 +48,11 @@ export default function SignUp() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-[90vh]">
       {/* Left Section - Image and Quote */}
       <div className="w-1/2 relative hidden lg:block">
         <Image
-          src="/images/signup-bg.jpg"
+          src="/images/image 3.png"
           alt="Doctor and Patient"
           layout="fill"
           objectFit="cover"
@@ -108,7 +108,7 @@ export default function SignUp() {
                 placeholder="Type your name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#53A4EC]"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#AD6E9D]"
               />
             </div>
             <div className="mb-4">
@@ -118,7 +118,7 @@ export default function SignUp() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#53A4EC]"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#AD6E9D]"
               />
             </div>
             <div className="mb-4">
@@ -128,7 +128,7 @@ export default function SignUp() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#53A4EC]"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#AD6E9D]"
               />
             </div>
             <div className="mb-4 flex items-center">
@@ -139,7 +139,7 @@ export default function SignUp() {
             </div>
             <button
               type="submit"
-              className="w-full bg-[#53A4EC] text-white py-3 rounded-lg hover:bg-blue-500"
+              className="w-full bg-[#AD6E9D] text-white py-3 rounded-lg hover:bg-[#AD6E9D]/80"
             >
               Sign up
             </button>
@@ -147,7 +147,7 @@ export default function SignUp() {
 
           <p className="mt-4 text-gray-600 text-center">
             Have an account?{" "}
-            <a href="/auth/login" className="text-[#53A4EC]">
+            <a href="/auth/login" className="text-[#AD6E9D]">
               Sign In
             </a>
           </p>

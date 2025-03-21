@@ -49,7 +49,7 @@ const Chatbox = () => {
             <div
               className={`${
                 message.role === "user"
-                  ? "bg-[#53a4ec] text-white"
+                  ? "bg-[#AD6E9D] text-white"
                   : "bg-[#EEEEEE] text-black"
               } p-3 rounded-lg max-w-[80%] break-words`}
             >
@@ -64,7 +64,7 @@ const Chatbox = () => {
         <input
           type="text"
           placeholder="Ask me something..."
-          className="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#53a4ec]"
+          className="flex-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#AD6E9D]"
           onKeyDown={(e) => {
             if (e.key === "Enter" && e.currentTarget.value) {
               handleUserMessage(e.currentTarget.value);

@@ -1,25 +1,16 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AiChat from "@/components/AiChat";
+import { LanguageProvider } from "./context/LanguageContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "EMMA | Guidance You Can Trust, Anytime.",
-  description:
-    "A Platform Providing Confidential Health Support for Every Girl",
+  title: "Emma - Healthcare Access",
+  description: "Confidential health support for every girl",
 };
 
 export default function RootLayout({
@@ -29,14 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        {/* Add padding to account for the fixed navbar */}
-        <div className="min-h-[70vh] mt-20 w-[90%] mx-auto">{children}</div>
-        <Footer />
-        <AiChat />
+      <body className={inter.className}>
+        <LanguageProvider>
+          <Navbar />
+          <main className="pt-20">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

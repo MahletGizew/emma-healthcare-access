@@ -7,10 +7,10 @@ const Footer = () => {
     <footer className="bg-[#EEEEEE] text-black py-16 px-36">
       <div className="container mx-auto flex flex-col md:flex-row justify-between">
         <div className="mb-6 md:mb-0 flex flex-col items-between">
-          <Link href="/" className="text-2xl font-bold text-[#53A4EC]">
+          <Link href="/" className="text-2xl font-bold text-[#AD6E9D]">
             EMMA
           </Link>
-          <select className="mt-6 bg-[#53A4EC] p-2 text-white border border-white outline-none rounded">
+          <select className="mt-6 bg-[#AD6E9D] p-2 text-white border border-white outline-none rounded">
             <option>English</option>
             <option>Amharic</option>
             <option>Arabic</option>
@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
 
         <div className="mr-10">
-          <h5 className="font-semibold mb-4 text-[#53A4EC]">Quick Links</h5>
+          <h5 className="font-semibold mb-4 text-[#AD6E9D]">Quick Links</h5>
           <ul className="flex flex-col gap-2">
             <Link href="/about">About Us</Link>
             <Link href="/how-it-works">How It Works</Link>
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
 
         <div className="mr-10">
-          <h5 className="font-semibold mb-2 text-[#53A4EC]">
+          <h5 className="font-semibold mb-2 text-[#AD6E9D]">
             Support & Resources
           </h5>
           <ul className="flex flex-col gap-2">
@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-6 md:mt-0">
-          <h5 className="font-semibold mb-2 text-[#53A4EC]">
+          <h5 className="font-semibold mb-2 text-[#AD6E9D]">
             Contact & Socials
           </h5>
           <ul className="flex flex-col gap-2">
@@ -55,7 +55,7 @@ const Footer = () => {
                 support@emmahealth.com
               </Link>
             </p>
-            <p className="text-gray-400">📞 Phone: +12 456 7890</p>
+            <p className="text-gray-400">�� Phone: +12 456 7890</p>
           </ul>
         </div>
       </div>

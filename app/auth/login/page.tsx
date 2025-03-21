@@ -39,11 +39,11 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-[90vh] bg-gray-100">
       {/* Left Side - Image and Quote */}
       <div className="hidden lg:flex w-1/2 relative">
         <Image
-          src="/images/login-bg.jpg"
+          src="/images/image 2.png"
           alt="Doctor"
           layout="fill"
           objectFit="cover"
@@ -98,7 +98,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your Email"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#AD6E9D]"
               />
             </div>
             <div className="mb-4">
@@ -107,20 +107,20 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#AD6E9D]"
               />
             </div>
             <div className="flex justify-between items-center mb-4">
               <label className="flex items-center text-sm text-gray-600">
                 <input type="checkbox" className="mr-2" /> Remember Me
               </label>
-              <a href="#" className="text-sm text-[#53A4EC] hover:underline">
+              <a href="#" className="text-sm text-[#AD6E9D] hover:underline">
                 Forgot Password?
               </a>
             </div>
             <button
               type="submit"
-              className="w-full bg-[#53A4EC] text-white py-2 rounded-lg hover:bg-blue-500"
+              className="w-full bg-[#AD6E9D] text-white py-2 rounded-lg hover:bg-[#AD6E9D]/80"
             >
               Log in
             </button>
@@ -130,7 +130,7 @@ export default function LoginPage() {
             Not a member yet?{" "}
             <Link
               href="/auth/sign-up"
-              className="text-[#53A4EC] hover:underline"
+              className="text-[#AD6E9D] hover:underline"
             >
               Create an account
             </Link>
