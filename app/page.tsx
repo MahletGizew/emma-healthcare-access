@@ -1,103 +1,122 @@
+import StatSection from "@/components/StatSection";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <section className="h-[80vh] mx-auto py-20 mb-8">
+        <div className="flex flex-col md:flex-row justify-center items-end h-full">
+          <div className="md:w-1/2 px-12">
+            <h1 className="text-5xl font-bold leading-16 text-[#1e1e1e]">
+              Confidential Health Support for Every Girl
+            </h1>
+            <p className="text-xl text-gray-600 mt-4">
+              Get private consultations, access trusted health information, and
+              find the nearest care center—all in one place
+            </p>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/consultation"
+                className="mt-6 bg-[#53A4EC] text-white px-4 py-2 rounded cursor-pointer hover:bg-[#3A83C4]"
+              >
+                Start Consultations
+              </Link>
+              <Link
+                href="/find-hospital"
+                className="mt-6 border border-[#53A4EC] text-[#53A4EC] px-4 py-2 rounded cursor-pointer hover:bg-[#53A4EC] hover:text-white"
+              >
+                Find a Health Center
+              </Link>
+            </div>
+          </div>
+          <div className="md:w-1/2">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/hero-section.svg"
+              alt="hero"
+              width={600}
+              height={600}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <StatSection />
+
+      <section className=" mx-auto py-12 px-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="flex flex-col gap-4 p-12 items-start col-span-2">
+            <h3 className="text-4xl font-semibold">Why Use Emma</h3>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto mt-2">
+              Emma connects you to trusted healthcare, expert advice, and
+              confidential support—quickly, easily, and without judgment.
+            </p>
+          </div>
+          <div className="p-10 bg-white shadow-md rounded-lg flex flex-col items-start gap-2">
+            <Image src="/icons/locked.svg" alt="lock" width={36} height={36} />
+            <h4 className="font-semibold text-xl text-gray-800 mt-4">
+              Private Help
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Your health is personal. Get confidential support without fear or
+              judgment.
+            </p>
+          </div>
+          <div className="p-10 bg-white shadow-md rounded-lg flex flex-col items-start gap-2">
+            <Image
+              src="/icons/location.svg"
+              alt="lock"
+              width={36}
+              height={36}
+            />
+            <h4 className="font-semibold text-xl text-gray-800 mt-4">
+              Nearby Hospitals
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Find nearby hospitals and health centers in just a few clicks.
+            </p>
+          </div>
+          <div className="p-10 bg-white shadow-md rounded-lg flex flex-col items-start gap-2">
+            <Image src="/icons/info.svg" alt="lock" width={36} height={36} />
+            <h4 className="font-semibold text-xl text-gray-800 mt-4">
+              Health Info
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Get expert-approved content on reproductive health, mental
+              well-being, and more.
+            </p>
+          </div>
+          <div className="p-10 bg-white shadow-md rounded-lg flex flex-col items-start gap-2">
+            <Image src="/icons/ai.svg" alt="lock" width={36} height={36} />
+            <h4 className="font-semibold text-xl text-gray-800 mt-4">
+              AI Assistance
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Instant answers, 24/7, to help you make informed health decisions.
+            </p>
+          </div>
+          <div className="p-10 bg-white shadow-md rounded-lg flex flex-col items-start gap-2">
+            <Image src="/icons/contact.svg" alt="lock" width={36} height={36} />
+            <h4 className="font-semibold text-xl text-gray-800 mt-4">
+              Direct Contact
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Quickly connect with partner hospitals for guidance, appointments,
+              or urgent care.
+            </p>
+          </div>
+          <div className="p-10 bg-white shadow-md rounded-lg flex flex-col items-start gap-2">
+            <Image src="/icons/message.svg" alt="lock" width={36} height={36} />
+            <h4 className="font-semibold text-xl text-gray-800 mt-4">
+              Secure & Easy
+            </h4>
+            <p className="text-gray-600 text-sm">
+              A user-friendly platform designed for your safety and peace of
+              mind.
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
